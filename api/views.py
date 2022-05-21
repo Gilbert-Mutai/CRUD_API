@@ -6,30 +6,6 @@ from rest_framework.response import Response
 from .models import Task
 from .serializers import TaskSerializer
 
-
-# @api_view(['GET'])
-# def apiOverview(request):
-#     tasks = [
-#             {
-#                 "id": 1,
-#                 "title": "",
-#                 "code": "foo = \"bar\"\n",
-#                 "linenos": False,
-#                 "language": "python",
-#                 "style": "friendly"
-#             },
-#             {
-#                 "id": 2,
-#                 "title": "",
-#                 "code": "print(\"hello, world\")\n",
-#                 "linenos": False,
-#                 "language": "python",
-#                 "style": "friendly"
-#             }
-#             ]
-#     return Response(tasks)
-
-
 @api_view(['GET'])
 def taskList(request):
     tasks = Task.objects.all()
